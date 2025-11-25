@@ -1,0 +1,16 @@
+name: ci-cd
+on:
+  push:
+    branches: 
+      -main
+jobs:
+  myfirstjob:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello didier"
+      - name: Checkout
+        uses: actions/checkout@v6.0.0
+      - run: |
+          echo "The repository ${{ github.repository }} contains the following files"
+          tree
+    
